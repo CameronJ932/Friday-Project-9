@@ -19,7 +19,7 @@ if apikey is None:
 else:
     openai.api_key = apikey
 
-    def get_open_ai_repsonse():
+    def get_openai_response():
         prompt = entry_prompt.get()
 
         chat_completion = client.chat.completions.create(
@@ -48,6 +48,9 @@ else:
         label_prompt.pack(pady=20)
         entry_prompt = tk.Entry(initial_window, width = "50")
         entry_prompt.pack(pady=20)
+
+        submit_button = tk.Button(initial_window, text="Submit", command=get_openai_response)
+        submit_button.pack(padx=10, pady=10)
 
         label_prompt = tk.Label(initial_window, text="Output: ", font=("Arial",14))
         label_prompt.pack(pady=20)

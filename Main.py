@@ -50,10 +50,7 @@ else:
         entry_prompt = tk.Entry(root, width = "50")
         entry_prompt.pack(pady=20)
 
-        label_output = tk.Label(initial_window, text="Output: ", font=("Arial",14))
-        label_output.pack(pady=20)
-        output = tk.Entry(initial_window, font =("Arial", 14), show="*")
-        output.pack(pady=20)
+ 
 
         initial_window.mainloop()
 

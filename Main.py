@@ -19,7 +19,24 @@ if apikey is None:
 else:
     openai.api_key = apikey
 
+    def get_open_ai_repsonse():
+        prompt = entry_prompt.get()
+
+        chat_completion = client.chat.completions.create(
+        messages=[
+        {
+        "role": "user",
+        "content": prompt,
+        }
+        ],
+        model="gpt-4o-2024-08-06",
+        max_tokens = 50
+        )
+
+        print(chat_completion.choices[0].message.content)
+
     def open_initial_window():
+        root = tk.Tk()
         initial_window = tk.Tk()
         initial_window.title("Initial Window")
         initial_window.geometry("800x500")
@@ -30,7 +47,7 @@ else:
 
         label_prompt = tk.Label(initial_window, text="Input your Promt: ", font=("Arial",14))
         label_prompt.pack(pady=20)
-        entry_prompt = tk.Entry(initial_window, font =("Arial", 14), show="*")
+        entry_prompt = tk.Entry(root, width = "50")
         entry_prompt.pack(pady=20)
 
         label_output = tk.Label(initial_window, text="Output: ", font=("Arial",14))

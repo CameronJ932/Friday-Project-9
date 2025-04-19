@@ -36,7 +36,6 @@ else:
         print(chat_completion.choices[0].message.content)
 
     def open_initial_window():
-        root = tk.Tk()
         initial_window = tk.Tk()
         initial_window.title("Initial Window")
         initial_window.geometry("800x500")
@@ -47,12 +46,12 @@ else:
 
         label_prompt = tk.Label(initial_window, text="Input your Promt: ", font=("Arial",14))
         label_prompt.pack(pady=20)
-        entry_prompt = tk.Entry(root, width = "50")
+        entry_prompt = tk.Entry(initial_window, width = "50")
         entry_prompt.pack(pady=20)
 
         label_prompt = tk.Label(initial_window, text="Output: ", font=("Arial",14))
         label_prompt.pack(pady=20)
-        output_text = scrolledtext.ScrolledText(root, width=60, height=10)
+        output_text = scrolledtext.ScrolledText(initial_window, width=60, height=10)
         output_text.pack(padx=10, pady=10)
 
         initial_window.mainloop()

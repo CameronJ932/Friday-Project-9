@@ -19,6 +19,19 @@ def open_initial_window():
     initial_window.geometry("800x500")
     initial_window.config(bg="lightblue")
 
+    label_intro = tk.Label(initial_window, text="Welcome to ChatGPT API Interface", font=("Arial",14))
+    label_intro.pack(pady=10)
+
+    label_prompt = tk.Label(initial_window, text="Input your Promt: ", font=("Arial",14))
+    label_prompt.pack(pady=20)
+    entry_prompt = tk.Entry(initial_window, font =("Arial", 14), show="*")
+    entry_prompt.pack(pady=20)
+
+    label_output = tk.Label(initial_window, text="Output: ", font=("Arial",14))
+    label_output.pack(pady=20)
+    output = tk.Entry(initial_window, font =("Arial", 14), show="*")
+    output.pack(pady=20)
+
     initial_window.mainloop()
 
 open_initial_window()

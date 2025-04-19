@@ -1,6 +1,6 @@
 import openai
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import scrolledtext
 from dotenv import load_dotenv
 import os
 
@@ -50,7 +50,10 @@ else:
         entry_prompt = tk.Entry(root, width = "50")
         entry_prompt.pack(pady=20)
 
- 
+        label_prompt = tk.Label(initial_window, text="Output: ", font=("Arial",14))
+        label_prompt.pack(pady=20)
+        output_text = scrolledtext.ScrolledText(root, width=60, height=10)
+        output_text.pack(padx=10, pady=10)
 
         initial_window.mainloop()
 

@@ -12,3 +12,13 @@ client = openai.OpenAI(
 )
 
 apikey = os.getenv("key")
+
+def open_intial_window():
+    intial_window = tk.Tk()
+    intial_window.title("Window")
+    intial_window.geometry("800x500")
+    intial_window.config(bg="lightblue")
+
+    intial_window.mainloop()
+
+open_intial_window()

@@ -33,7 +33,8 @@ else:
         max_tokens = 50
         )
 
-        print(chat_completion.choices[0].message.content)
+        output_text.delete(1.0, tk.END)
+        output_text.insert(tk.END,chat_completion.choices[0].message.content.strip())
 
     
     initial_window = tk.Tk()
